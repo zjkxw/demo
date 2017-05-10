@@ -1,0 +1,62 @@
+1. 配置
+	git config --global user.name ''
+	git config --global user.email ''
+	
+2. 创建版本库
+	git init
+
+3. 基础命令
+	git add fileName		将文件加入暂存区
+	git commit fileName		将文件提交至版本库
+	
+	git status				查看工作区文件状态（哪些修改未提交）
+	git diff fileName		查看某个文件在本地和版本库的区别
+	
+	git log					查看文件提交记录
+	git log --pretty=oneline 	信息一行显示
+	
+	git reflog				查看版本信息
+	git reset --hard HEAD【^|^^|~N】	回退至上一个版本 | 前2个版本 | 前N个版本
+	git reset --hard 版本号				回退至指定版本
+	
+	git checkout -- fileName	下载版本库文件，覆盖工作区文件
+	
+	git rm fileName				删除工作区文件，之后运行 git commit，将修改提交至版本库
+	
+4. 分支
+	默认主分支为：master。下文中，dev为自定义分支名字
+	git branch					查看当前有哪些分支
+	git branch dev				创建分支
+	git checkout dev			切换分支
+	git checkout -b dev			创建&切换分支
+	git branch -d dev			删除分支（分支必须和主线合并）
+	git branch -D dev			强制删除分支
+	git merge 【--no-ff】 dev	将dev分支合并到当前分支中
+		--no-ff 	将分支中的修改提示信息，合并到主线中
+	git log --graph --pretty=oneline --abbrev-commit
+		--graph			【包含分支信息】
+		--pretty=oneline【一行显示】
+		--abbrev-commit	【显示简短的版本号】
+	
+5. 远程提交
+	git remote add origin 远程库的.git文件
+	git clone 远程库的.git文件			将远程库的内容复制到本地文件夹，并创建版本库
+	git push -u origin 分支名称		将此分支的内容，推送带远程库
+	git pull origin 远程分支名称	将远程分支的内容，下载到本地
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
